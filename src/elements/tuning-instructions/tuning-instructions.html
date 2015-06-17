@@ -1,0 +1,142 @@
+<!--
+
+Copyright 2015 Google Inc. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-->
+
+<link rel="import" href="../../third_party/polymer.html">
+
+<dom-module id="tuning-instructions">
+  <style>
+    :host {
+      width: 140px;
+      height: 100px;
+    }
+
+    :host(.resolved) #indicator {
+      width: 56px;
+      height: 56px;
+      background: #FFF;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    :host(.resolved) #indicator::after {
+      content: '';
+      display: block;
+      background: red;
+    }
+
+    #message {
+      width: 100%;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1;
+      margin: 8px 0 0 0;
+      text-align: center;
+      color: #888;
+      margin-top: 10px;
+    }
+
+    #indicator {
+      position: relative;
+    }
+
+    #up, #down, #tick {
+      opacity: 0;
+    }
+
+    :host(.resolved) #up,
+    :host(.resolved) #down {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 56px;
+      height: 56px;
+      opacity: 0;
+      will-change: transform;
+      transition: opacity 0.133s cubic-bezier(0,0,0.21,1) 50ms,
+          transform 0.133s cubic-bezier(0,0,0.21,1) 50ms;
+      background: url(up-down.svg) center center no-repeat;
+    }
+
+    :host(.resolved) #down {
+      transform: rotate(180deg);
+    }
+
+    :host(.resolved) #tick {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 56px;
+      height: 56px;
+      opacity: 0;
+      will-change: transform;
+      transition: opacity 0.133s cubic-bezier(0,0,0.21,1) 50ms,
+          transform 0.133s cubic-bezier(0,0,0.21,1) 50ms;
+      background: url(tick.svg) center center no-repeat;
+      transform: rotate(180deg);
+    }
+
+    #indicator.tune-down #down {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+
+    #indicator.tune-up #up {
+      opacity: 1;
+      transform: rotate(180deg);
+    }
+
+    #indicator.in-tune #tick {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+
+    :host(.resolved) #message {
+      display: block;
+    }
+
+    #frequency {
+      width: 100px;
+      text-align: center;
+      color: #F39731;
+    }
+
+    #divider {
+      width: 20px;
+    }
+
+    #stringfrequency {
+      width: 100px;
+      text-align: center;
+    }
+  </style>
+  <template>
+    <div id="indicator">
+      <div id="up"></div>
+      <div id="down"></div>
+      <div id="tick"></div>
+    </div>
+    <div id="message">
+      <span id="frequency">-</span>
+      <span id="divider">/</span>
+      <span id="stringfrequency">-</span>
+    </div>
+  </template>
+</dom-module>
+
+<script src="tuning-instructions.js"></script>

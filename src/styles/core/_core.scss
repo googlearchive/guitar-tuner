@@ -1,0 +1,110 @@
+/**
+ *
+ * Copyright 2015 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+
+  -webkit-justify-content: center;
+            -ms-flex-pack: center;
+          justify-content: center;
+
+  -webkit-align-items: center;
+       -ms-flex-align: center;
+          align-items: center;
+
+  -webkit-align-content: stretch;
+     -ms-flex-line-pack: stretch;
+          align-content: stretch;
+
+  background: $backgroundDark;
+}
+
+a {
+  color: $secondary;
+}
+
+.hidden {
+  display: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'),
+      url(/third_party/Roboto/Roboto-100.woff2) format('woff2'),
+      url(/third_party/Roboto/Roboto-100.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'),
+      url(/third_party/Roboto/Roboto-300.woff2) format('woff2'),
+      url(/third_party/Roboto/Roboto-300.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'),
+      url(/third_party/Roboto/Roboto-400.woff2) format('woff2'),
+      url(/third_party/Roboto/Roboto-400.woff) format('woff');
+}
+
+.version {
+  font-size: 10px;
+  color: #FFF;
+  opacity: 0.3;
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+}
