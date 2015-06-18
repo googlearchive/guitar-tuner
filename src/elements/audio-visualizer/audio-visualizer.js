@@ -201,7 +201,7 @@ class AudioVisualizer {
     this.surroundCtx.rotate(step * -0.5);
     this.surroundCtx.strokeStyle = 'rgba(0,0,0,0.1)';
     this.surroundCtx.fillStyle = '#FFF';
-    this.surroundCtx.font = 'normal 400 20px Roboto';
+
     this.surroundCtx.textBaseline = 'middle';
     this.surroundCtx.textAlign = 'center';
 
@@ -219,6 +219,7 @@ class AudioVisualizer {
       this.surroundCtx.closePath();
 
       this.surroundCtx.rotate(step * 0.5);
+      this.surroundCtx.font = 'normal 400 20px Roboto';
       this.surroundCtx.fillText(noteStr[0], 0,
         -radius + (radius - radiusInner) * 0.5);
 
@@ -227,7 +228,8 @@ class AudioVisualizer {
         this.surroundCtx.translate(12,
             -radius + (radius - radiusInner) * 0.5 - 6);
         this.surroundCtx.scale(0.7, 0.7);
-        this.surroundCtx.fillText('#', 0, 0);
+        this.surroundCtx.font = 'normal 400 20px sans-serif';
+        this.surroundCtx.fillText(noteStr[1], 0, 0);
         this.surroundCtx.restore();
       }
       this.surroundCtx.restore();
@@ -395,9 +397,10 @@ class AudioVisualizer {
 
     if (noteSharp) {
       this.ctx.save();
-      this.ctx.translate(36, -32);
+      this.ctx.translate(32, -28);
       this.ctx.scale(0.5, 0.5);
-      this.ctx.fillText('#', 0, 0);
+      this.ctx.font = 'normal 100 80px sans-serif';
+      this.ctx.fillText(this.note[1], 0, 0);
       this.ctx.restore();
     }
 
@@ -427,12 +430,12 @@ class AudioNotation {
   static convertNote (note) {
     switch (note) {
       case 0: return 'A';
-      case 1: return 'A#';
+      case 1: return 'B♭';
       case 2: return 'B';
       case 3: return 'C';
       case 4: return 'C#';
       case 5: return 'D';
-      case 6: return 'D#';
+      case 6: return 'E♭';
       case 7: return 'E';
       case 8: return 'F';
       case 9: return 'F#';

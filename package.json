@@ -1,6 +1,6 @@
 {
   "name": "guitar-tuner",
-  "version": "0.0.64",
+  "version": "0.0.66",
   "private": true,
   "engines": {
     "node": ">=0.10.0"
