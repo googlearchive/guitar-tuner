@@ -70,7 +70,7 @@ import ToasterInstance from './libs/Toaster';
       '/elements/tuning-instructions/tuning-instructions.html'
     ];
 
-    elements.map(function(elementURL) {
+    elements.forEach(function(elementURL) {
 
       var elImport = document.createElement('link');
       elImport.rel = 'import';
