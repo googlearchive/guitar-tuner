@@ -18,7 +18,7 @@
 import ToasterInstance from './libs/Toaster';
 
 (function () {
-  // Don't just you just love prefixed stuff? No? Me neither.
+  // Don't you just love prefixed stuff? No? Me neither.
   window.AudioContext = window.AudioContext ||
       window.webkitAudioContext ||
       window.mozAudioContext ||
@@ -70,7 +70,7 @@ import ToasterInstance from './libs/Toaster';
       '/elements/tuning-instructions/tuning-instructions.html'
     ];
 
-    elements.map(function(elementURL) {
+    elements.forEach(function(elementURL) {
 
       var elImport = document.createElement('link');
       elImport.rel = 'import';
