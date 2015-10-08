@@ -19,7 +19,7 @@ var isProd = false;
 var gulp = require('gulp'),
     fs = require('fs'),
     del = require('del'),
-    watch = require('gulp-watch')
+    watch = require('gulp-watch'),
     watchify = require('watchify'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
@@ -77,7 +77,7 @@ function buildBundle(bundleName) {
   return b.pipe(license('Apache', {
       organization: 'Google Inc. All rights reserved.'
     }))
-    .pipe(gulp.dest(dest))
+    .pipe(gulp.dest(dest));
 }
 
 var bundles = {
@@ -122,7 +122,7 @@ gulp.task('styles', function() {
       .pipe(license('Apache', {
         organization: 'Google Inc. All rights reserved.'
       }))
-      .pipe(gulp.dest('./dist/styles'))
+      .pipe(gulp.dest('./dist/styles'));
 });
 
 /** Scripts */
@@ -131,7 +131,7 @@ gulp.task('scripts', function() {
   for (var b = 0; b < bundleKeys.length; b++) {
     buildBundle(bundleKeys[b]);
   }
-})
+});
 
 /** Root */
 gulp.task('root', function() {
@@ -234,7 +234,7 @@ gulp.task('default', function() {
   isProd = true;
   return runSequence('clean', 'bump', 'getversion', allTasks,
         'vulcanize-and-minify', 'clean-elements-folder');
-})
+});
 
 gulp.task('dev', function() {
   return runSequence('clean', 'getversion', allTasks, 'watch');
