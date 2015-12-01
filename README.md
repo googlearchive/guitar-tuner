@@ -6,6 +6,32 @@ A sample web app that lets you tune a guitar. It uses ES6 classes (via Babel) an
 
 [See the site here](https://guitar-tuner.appspot.com/)
 
+## Running the site locally
+
+1. Download the [Google App Engine SDK for Python](https://cloud.google.com/appengine/downloads?hl=en). Grab the Launcher, and install it.
+2. `npm install -g gulp`
+3. `git clone https://github.com/GoogleChrome/guitar-tuner`
+4. `cd guitar-tuner`
+5. `npm i`
+6. `gulp`
+
+If you get an error about lib-sass, you will need to get a newer version of gulp-sass:
+
+```bash
+throw new Error('`libsass` bindings not found. Try reinstalling `node-sass`?');
+```
+
+The error is thrown if your version of Node is newer than 0.12 or so.
+
+1. Open `package.json` and change the gulp-sass version to 2.1.0 or newer, i.e. "gulp-sass": "^2.1.0"
+2. `rm -rf node_modules/`
+3. `npm i`
+4. `gulp`
+
+Once the build has finished, you can boot the GAE Launcher and choose File -> Add Existing Application... and point it at the guitar-tuner folder.
+
+Start the application, and visit the URL indicated by the port, i.e. [http://localhost:8080](http://localhost:8080) (N.B. you do not the admin port).
+
 ## License
 
 Copyright 2015 Google, Inc.
