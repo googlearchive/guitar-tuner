@@ -81,7 +81,7 @@ class AudioProcessor {
         offset: Math.round(this.audioContext.sampleRate / 329.628),
         difference: 0
       }
-    }
+    };
 
     this.stringsKeys = Object.keys(this.strings);
 
@@ -189,9 +189,6 @@ class AudioProcessor {
       this.assessStringsUntilTime = time + 250;
 
     if (time < this.assessStringsUntilTime) {
-
-      let smallestDifference = Number.POSITIVE_INFINITY;
-      let smallestDifferenceKey = '';
 
       this.assessedStringsInLastFrame = true;
 
