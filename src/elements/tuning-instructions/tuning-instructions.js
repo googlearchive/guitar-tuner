@@ -85,7 +85,7 @@ class TuningInstructions {
       g3: linearizedFrequency - this.linearizedFrequencies.g3,
       b3: linearizedFrequency - this.linearizedFrequencies.b3,
       e4: linearizedFrequency - this.linearizedFrequencies.e4
-    }
+    };
 
     let distanceKeys = Object.keys(distances);
     let smallestDistance = Number.MAX_VALUE;
