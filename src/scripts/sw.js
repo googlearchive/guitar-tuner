@@ -31,8 +31,6 @@ self.oninstall = function(event) {
     '/elements/audio-processor/audio-processor.html',
     '/elements/audio-visualizer/audio-visualizer.html',
     '/elements/tuning-instructions/tuning-instructions.html',
-    '/elements/tuning-instructions/tick.svg',
-    '/elements/tuning-instructions/up-down.svg',
 
     '/third_party/polymer.html',
     '/third_party/webcomponents-lite.min.js',

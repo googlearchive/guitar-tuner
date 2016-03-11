@@ -34,6 +34,7 @@ var gulp = require('gulp'),
     replace = require('gulp-replace'),
     bump = require('gulp-bump'),
     vulcanize = require('gulp-vulcanize'),
+    base64 = require('gulp-base64'),
     minifyInline = require('gulp-minify-inline'),
     path = require('path');
 
@@ -183,6 +184,7 @@ gulp.task('vulcanize-and-minify', function() {
       stripExcludes: false,
       excludes: [path.resolve('./dist/third_party/polymer.html')]
     }))
+    .pipe(base64())
     .pipe(minifyInline())
     .pipe(gulp.dest('./dist/elements'));
 
