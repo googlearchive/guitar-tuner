@@ -9,6 +9,5 @@
       "type": "image/png"
     }
   ],
-  "display": "standalone",
-  "orientation": "portrait"
+  "display": "standalone"
 }
