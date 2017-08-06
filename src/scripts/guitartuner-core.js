@@ -24,13 +24,8 @@ import ToasterInstance from './libs/Toaster';
       window.mozAudioContext ||
       window.msAudioContext;
 
-  navigator.getUserMedia = navigator.getUserMedia ||
-      navigator.webkitGetUserMedia ||
-      navigator.mozGetUserMedia ||
-      navigator.msGetUserMedia;
-
   if (typeof window.AudioContext === 'undefined' ||
-      typeof navigator.getUserMedia === 'undefined') {
+      typeof navigator.mediaDevices.getUserMedia === 'undefined') {
 
     requestAnimationFrame(function() {
       document.body.classList.add('unsupported');

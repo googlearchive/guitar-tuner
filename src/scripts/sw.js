@@ -34,6 +34,8 @@ self.oninstall = function(event) {
 
     '/third_party/polymer.html',
     '/third_party/webcomponents-lite.min.js',
+    '/third_party/adapter.js',
+    '/third_party/get-float-time-domain-data.js',
 
     '/third_party/Roboto/Roboto-100.woff2',
     '/third_party/Roboto/Roboto-300.woff2',
