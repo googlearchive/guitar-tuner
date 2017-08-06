@@ -39,7 +39,7 @@ class AudioProcessor {
 
     this.FFTSIZE = 2048;
     this.stream = null;
-    this.audioContext = new AudioContext();
+    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
     this.analyser = this.audioContext.createAnalyser();
     this.gainNode = this.audioContext.createGain();
     this.microphone = null;
@@ -99,7 +99,7 @@ class AudioProcessor {
 
   requestUserMedia () {
 
-    navigator.getUserMedia({audio:true}, (stream) => {
+    navigator.mediaDevices.getUserMedia({audio:true}).then((stream) => {
 
       this.sendingAudioData = true;
       this.stream = stream;
@@ -110,7 +110,7 @@ class AudioProcessor {
 
       requestAnimationFrame(this.dispatchAudioData);
 
-    }, (err) => {
+    }).catch(() => {
       ToasterInstance().then((toaster) => {
         toaster.toast('Unable to access the microphone')
       });
